@@ -99,6 +99,11 @@ rf.fit(X_train, y_train)
 # However let's keep our high capacity random forest model for now so as to
 # illustrate some pitfalls with feature importance on variables with many
 # unique values.
+# Write scores to a file
+with open("Accuracy.txt", 'w') as outfile:
+        outfile.write("RF train accuracy: %0.3f" % rf.score(X_train, y_train))
+        outfile.write("RF test accuracy: %0.3f" % rf.score(X_test, y_test))
+
 print("RF train accuracy: %0.3f" % rf.score(X_train, y_train))
 print("RF test accuracy: %0.3f" % rf.score(X_test, y_test))
 
